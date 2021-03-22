@@ -1,0 +1,45 @@
+module.exports = {
+  processors: ['stylelint-processor-styled-components'],
+  extends: ['stylelint-config-standard', 'stylelint-config-styled-components'],
+  plugins: ['stylelint-declaration-use-variable', 'stylelint-order'],
+  rules: {
+    'sh-waqar/declaration-use-variable': [
+      [
+        'font',
+        'font-family',
+        'font-size',
+        'font-weight',
+        'z-index',
+        'color',
+        '/color/',
+      ],
+    ],
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          'each',
+          'else',
+          'extend',
+          'for',
+          'function',
+          'if',
+          'include',
+          'mixin',
+          'return',
+          'while',
+        ],
+      },
+    ],
+    'declaration-colon-newline-after': null,
+    'declaration-block-semicolon-newline-after': null,
+    'declaration-empty-line-before': null,
+    'rule-empty-line-before': null,
+    'value-list-comma-newline-after': null,
+    'value-list-max-empty-lines': null,
+    'selector-type-no-unknown': null,
+    indentation: null,
+    'value-keyword-case': null,
+  },
+  syntax: 'scss',
+};

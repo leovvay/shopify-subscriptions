@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "./eslint/index.js",
+    "plugin:prettier/recommended"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["prettier"],
+
+  "rules": {
+    "prettier/prettier": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react-toastify",
+            "message": "Please import from components/Molecules/Toast/Toast."
+          },
+          {
+            "name": "@styled-system/theme-get",
+            "message": "Don't use themeGet, it is not typesafe!"
+          }
+        ],
+        "patterns": ["!react-toastify", "!@styled-system/theme-get"]
+      }
+    ],
+    "security/detect-object-injection": "off"
+  }
+}
